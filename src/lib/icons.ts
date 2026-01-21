@@ -1,0 +1,118 @@
+// src/lib/icons.ts
+import {
+  Globe2,
+  ShieldCheck,
+  Users,
+  ArrowUpRight,
+  Play,
+  Zap,
+  Radio,
+  Award,
+  TrendingUp,
+  Eye,
+  BookOpen,
+  MapPin,
+  Mail,
+  Phone,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Youtube,
+  Facebook,
+  ChevronRight,
+  Sparkles,
+  Target,
+  Database,
+  FileText,
+  Lock,
+  Coffee,
+  Calendar,
+  Clock,
+  Search,
+  Gift,
+  Download,
+  Star,
+  BarChart3,
+  Newspaper,
+  Podcast,
+  Briefcase,
+  CreditCard,
+  Smartphone,
+  PenTool,
+  Heart,
+  SparklesIcon,
+  ExternalLink,
+  CheckCircle,
+  // Add more icons as needed
+} from "lucide-react";
+
+export const iconMap = {
+  Globe2,
+  ShieldCheck,
+  Users,
+  ArrowUpRight,
+  Play,
+  Zap,
+  Radio,
+  Award,
+  TrendingUp,
+  Eye,
+  BookOpen,
+  MapPin,
+  Mail,
+  Phone,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Youtube,
+  Facebook,
+  ChevronRight,
+  Sparkles,
+  Target,
+  Database,
+  FileText,
+  Lock,
+  Coffee,
+  Calendar,
+  Clock,
+  Search,
+  Gift,
+  Download,
+  Star,
+  BarChart3,
+  Newspaper,
+  Podcast,
+  Briefcase,
+  CreditCard,
+  Smartphone,
+  PenTool,
+  Heart,
+  SparklesIcon,
+  ExternalLink,
+  CheckCircle,
+} as const;
+
+export type IconName = keyof typeof iconMap;
+
+export function getIcon(name: IconName) {
+  return iconMap[name] || Globe2;
+}
+
+export function getColorClass(
+  color: string,
+  type: "text" | "bg" | "border" = "text"
+) {
+  const colorMap: Record<string, string> = {
+    blue: `${type}-blue-500`,
+    emerald: `${type}-emerald-500`,
+    purple: `${type}-purple-500`,
+    red: `${type}-red-500`,
+    orange: `${type}-orange-500`,
+    pink: `${type}-pink-500`,
+    cyan: `${type}-cyan-500`,
+    amber: `${type}-amber-500`,
+    teal: `${type}-teal-500`,
+  };
+
+  return colorMap[color] || `${type}-blue-500`;
+}

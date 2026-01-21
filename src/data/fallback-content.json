@@ -1,0 +1,460 @@
+{
+  "site": {
+    "name": "Tanzania Media Foundation",
+    "acronym": "TMF",
+    "tagline": "Global reach, local knowledge",
+    "mission": "Empowering journalists with the tools, protection, and resources to pursue truth and accountability across Tanzania and beyond.",
+    "version": "1.0",
+    "last_updated": "2024-03-15T12:00:00Z"
+  },
+
+  "design_system": {
+    "colors": {
+      "primary": {
+        "main": "#1e40af",
+        "light": "#60a5fa",
+        "dark": "#1e3a8a",
+        "gradient": "linear-gradient(135deg, #1e40af 0%, #7c3aed 100%)",
+        "rgb": "30, 64, 175"
+      },
+      "secondary": {
+        "main": "#059669",
+        "light": "#34d399",
+        "dark": "#047857",
+        "rgb": "5, 150, 105"
+      },
+      "accent": {
+        "amber": "#f59e0b",
+        "pink": "#ec4899",
+        "teal": "#0d9488",
+        "purple": "#8b5cf6",
+        "coral": "#f97316"
+      },
+      "neutral": {
+        "white": "#ffffff",
+        "light": "#f8fafc",
+        "gray": "#64748b",
+        "dark": "#1e293b",
+        "black": "#0f172a"
+      }
+    },
+
+    "typography": {
+      "fonts": {
+        "heading": "'Inter', system-ui, sans-serif",
+        "body": "'Inter', system-ui, sans-serif",
+        "accent": "'Georgia', serif"
+      }
+    },
+
+    "icons": {
+      "primary": "Newspaper",
+      "secondary": "Shield",
+      "tertiary": "Globe",
+      "actions": {
+        "play": "Play",
+        "arrow": "ArrowRight",
+        "external": "ExternalLink",
+        "download": "Download"
+      },
+      "features": {
+        "protection": "ShieldCheck",
+        "network": "Users",
+        "innovation": "Zap",
+        "training": "GraduationCap",
+        "legal": "Scale",
+        "impact": "BarChart3"
+      }
+    }
+  },
+
+  "pages": {
+    "home": {
+      "hero": {
+        "status": {
+          "enabled": true,
+          "type": "live_badge",
+          "text": "2025 Grant Applications Now Open",
+          "variant": "success",
+          "icon": "Circle",
+          "blink": true
+        },
+
+        "headline": {
+          "type": "split_with_highlight",
+          "lines": [
+            {
+              "text": "Defending",
+              "animation": "fadeInUp",
+              "delay": 0
+            },
+            {
+              "text": "Truth.",
+              "highlight": true,
+              "gradient": "primary",
+              "animation": "fadeInUp",
+              "delay": 0.1
+            },
+            {
+              "text": "Protecting",
+              "animation": "fadeInUp",
+              "delay": 0.2
+            },
+            {
+              "text": "Storytellers.",
+              "bold": true,
+              "underline": true,
+              "animation": "fadeInUp",
+              "delay": 0.3
+            }
+          ],
+          "style": "serif_accent"
+        },
+
+        "description": {
+          "text": "We are the backbone of independent journalism in Tanzania. Through strategic grants, cutting-edge training, and unwavering legal defense, we empower storytellers to uncover truth and drive change.",
+          "show_quote_style": true
+        },
+
+        "actions": {
+          "primary": {
+            "label": "Apply for Grants",
+            "url": "/grants",
+            "icon": "ArrowRight",
+            "variant": "primary",
+            "size": "xl"
+          },
+          "secondary": {
+            "label": "Watch Impact Video",
+            "action": "modal",
+            "modal_id": "hero_video",
+            "icon": "Play",
+            "variant": "outline_glass"
+          }
+        },
+
+        "stats": {
+          "enabled": true,
+          "layout": "horizontal_split",
+          "items": [
+            {
+              "id": "grants_awarded",
+              "value": "2,567",
+              "label": "Grants Awarded",
+              "icon": "Award",
+              "color": "primary"
+            },
+            {
+              "id": "journalists_trained",
+              "value": "10,432",
+              "label": "Journalists Trained",
+              "icon": "GraduationCap",
+              "color": "secondary"
+            },
+            {
+              "id": "countries_reached",
+              "value": "75",
+              "label": "Countries Reached",
+              "icon": "Globe",
+              "color": "accent.purple"
+            }
+          ]
+        },
+
+        "trust_indicators": {
+          "enabled": true,
+          "type": "avatars_with_count",
+          "count": "10,000+",
+          "label": "journalists trust us",
+          "awards": ["Press Freedom Award", "Transparency Seal"]
+        },
+
+        "visuals": {
+          "background": {
+            "layers": [
+              {
+                "type": "gradient",
+                "value": "radial-gradient(circle at 30% 20%, rgba(30, 64, 175, 0.1) 0%, transparent 50%)"
+              },
+              {
+                "type": "gradient",
+                "value": "radial-gradient(circle at 70% 80%, rgba(5, 150, 105, 0.08) 0%, transparent 50%)"
+              }
+            ]
+          },
+
+          "floating_elements": [
+            {
+              "id": "featured_story",
+              "type": "image_card",
+              "title": "Field Dispatch: Kilombero Valley",
+              "description": "How community radio saved an entire village",
+              "position": {
+                "x": "right",
+                "y": "top",
+                "rotation": -6
+              }
+            },
+            {
+              "id": "live_stats",
+              "type": "glass_card",
+              "title": "Active Applications",
+              "value": "2,543",
+              "trend": "+12%",
+              "icon": "TrendingUp",
+              "position": {
+                "x": "center",
+                "y": "bottom"
+              }
+            }
+          ]
+        },
+
+        "animations": {
+          "mouse_parallax": {
+            "enabled": true,
+            "intensity": 20
+          }
+        }
+      },
+
+      "partners": {
+        "title": "Trusted by Leading Organizations",
+        "logos": [
+          {
+            "name": "UNESCO",
+            "logo": "/partners/unesco.svg"
+          },
+          {
+            "name": "European Union",
+            "logo": "/partners/eu.svg"
+          },
+          {
+            "name": "BBC Media Action",
+            "logo": "/partners/bbc.svg"
+          },
+          {
+            "name": "Google News Initiative",
+            "logo": "/partners/google.svg"
+          },
+          {
+            "name": "Ford Foundation",
+            "logo": "/partners/ford.svg"
+          },
+          {
+            "name": "Open Society Foundations",
+            "logo": "/partners/osf.svg"
+          }
+        ]
+      },
+
+      "mission_bento": {
+        "title": "Our Core Programs",
+        "description": "Comprehensive support for every stage of a journalist's journey",
+        "cards": [
+          {
+            "id": "grants",
+            "title": "Grant Programs",
+            "description": "Financial support for investigative reporting and innovation",
+            "icon": "Award",
+            "color": "primary",
+            "stats": "2,500+ grants awarded"
+          },
+          {
+            "id": "training",
+            "title": "Capacity Building",
+            "description": "Workshops, mentorships, and digital skills training",
+            "icon": "GraduationCap",
+            "color": "secondary",
+            "stats": "10,000+ journalists trained"
+          },
+          {
+            "id": "protection",
+            "title": "Legal Protection",
+            "description": "Emergency support and legal defense for journalists at risk",
+            "icon": "Shield",
+            "color": "accent.purple",
+            "stats": "500+ cases supported"
+          },
+          {
+            "id": "network",
+            "title": "Global Network",
+            "description": "Connecting journalists across 75+ countries",
+            "icon": "Globe",
+            "color": "accent.teal",
+            "stats": "150+ partner organizations"
+          }
+        ]
+      },
+
+      "stats": {
+        "title": "Impact by Numbers",
+        "description": "Transparent results from our 2024 Annual Report",
+        "metrics": [
+          {
+            "value": "2.5M+",
+            "label": "Readers Reached",
+            "description": "Through TMF-funded stories"
+          },
+          {
+            "value": "150+",
+            "label": "Partner Media Outlets",
+            "description": "Across Tanzania and beyond"
+          },
+          {
+            "value": "98%",
+            "label": "Grantee Satisfaction",
+            "description": "Based on annual surveys"
+          },
+          {
+            "value": "24/7",
+            "label": "Emergency Support",
+            "description": "Always available for journalists"
+          }
+        ]
+      },
+
+      "featured_story": {
+        "title": "Spotlight Story",
+        "headline": "How a Community Radio Station Saved a Village",
+        "description": "When flash floods hit the Kilombero district, mainstream media was silent. Using TMF-funded equipment, a local community radio station broadcasted evacuation routes for 72 hours straight.",
+        "image": "/stories/radio-hero.jpg",
+        "cta": {
+          "label": "Read Full Story",
+          "url": "/stories/kilombero-radio"
+        }
+      },
+
+      "program_showcase": {
+        "title": "Active Grant Programs",
+        "description": "Current funding opportunities available for application",
+        "programs": [
+          {
+            "title": "Investigative Journalism Fund",
+            "category": "Grants",
+            "deadline": "Closing in 3 days",
+            "status": "open"
+          },
+          {
+            "title": "Digital Transformation Grant",
+            "category": "Innovation",
+            "deadline": "Open until Nov 30",
+            "status": "open"
+          },
+          {
+            "title": "Women in Media Fellowship",
+            "category": "Training",
+            "deadline": "Opens Jan 2025",
+            "status": "upcoming"
+          }
+        ]
+      },
+
+      "cta_section": {
+        "title": "Ready to make an impact?",
+        "description": "Whether you are a journalist seeking funding or a partner looking to collaborate, TMF is your platform for change.",
+        "buttons": [
+          {
+            "label": "Start Application",
+            "url": "/apply",
+            "variant": "primary"
+          },
+          {
+            "label": "Partner With Us",
+            "url": "/partners",
+            "variant": "outline"
+          }
+        ]
+      }
+    }
+  },
+
+  "navigation": {
+    "main": [
+      {
+        "label": "About",
+        "url": "/about",
+        "children": [
+          { "label": "Our Story", "url": "/about/story" },
+          { "label": "Leadership", "url": "/about/leadership" },
+          { "label": "Financials", "url": "/about/financials" }
+        ]
+      },
+      {
+        "label": "Our Work",
+        "url": "/work",
+        "children": [
+          { "label": "Grant Programs", "url": "/grants" },
+          { "label": "Training", "url": "/training" },
+          { "label": "Research", "url": "/research" }
+        ]
+      },
+      {
+        "label": "Impact",
+        "url": "/impact"
+      },
+      {
+        "label": "Resources",
+        "url": "/resources"
+      },
+      {
+        "label": "Get Involved",
+        "url": "/involved"
+      }
+    ],
+
+    "footer": {
+      "columns": [
+        {
+          "title": "About TMF",
+          "links": [
+            { "label": "Mission & Vision", "url": "/about" },
+            { "label": "Annual Reports", "url": "/reports" },
+            { "label": "Careers", "url": "/careers" }
+          ]
+        },
+        {
+          "title": "Programs",
+          "links": [
+            { "label": "Grant Opportunities", "url": "/grants" },
+            { "label": "Training Programs", "url": "/training" },
+            { "label": "Legal Support", "url": "/legal" }
+          ]
+        },
+        {
+          "title": "Resources",
+          "links": [
+            { "label": "Toolkits", "url": "/resources/toolkits" },
+            { "label": "Research", "url": "/resources/research" },
+            { "label": "Safety Guides", "url": "/resources/safety" }
+          ]
+        }
+      ]
+    }
+  },
+
+  "contact": {
+    "email": {
+      "general": "info@tanzaniamedia.org",
+      "grants": "grants@tanzaniamedia.org",
+      "emergency": "emergency@tanzaniamedia.org"
+    },
+    "phone": {
+      "main": "+255 22 123 4567",
+      "emergency": "+255 777 888 999"
+    },
+    "address": "Media House, Mlimani City, Dar es Salaam, Tanzania",
+    "social": {
+      "twitter": "https://twitter.com/TZMediaFoundation",
+      "linkedin": "https://linkedin.com/company/tanzania-media-foundation",
+      "facebook": "https://facebook.com/TanzaniaMediaFoundation",
+      "youtube": "https://youtube.com/@TanzaniaMediaFoundation"
+    }
+  },
+
+  "emergency": {
+    "hotline": "+255 777 888 999",
+    "available": "24/7",
+    "description": "Immediate assistance for journalists in danger"
+  }
+}
