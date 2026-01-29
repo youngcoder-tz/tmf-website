@@ -1,19 +1,32 @@
 import React from "react";
+import { LiteracyHero } from "@/components/what-we-do/literacy/LiteracyHero";
+import { DisinfoDeconstruct } from "@/components/what-we-do/literacy/DisinfoDeconstruct";
+import { CurriculumTracks } from "@/components/what-we-do/literacy/CurriculumTracks";
+import { ImpactSpread } from "@/components/what-we-do/literacy/ImpactSpread";
+import { CallToAction } from "@/components/home/CallToAction";
+import siteContent from "@/data/site-content.json";
 
-export default function MedialiteracyPage() {
+export default function MediaLiteracyPage() {
+  const data = siteContent.pages.media_literacy_page;
+  // Custom "Educational" CTA
+  const ctaData = {
+    enabled: true,
+    headline: "Bring this to your school.",
+    subheadline:
+      "We offer subsidized workshops for public secondary schools and universities.",
+    primary_btn: { label: "Teacher Application", url: "#" },
+    secondary_btn: { label: "Download Guide", url: "#" },
+    bg_image:
+      "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop",
+  };
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 capitalize">Media literacy</h1>
-        <p className="text-lg text-gray-600 mb-8">
-          This is the Media literacy page. Content for this section is currently being developed.
-        </p>
-        <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <p className="text-sm text-gray-500 font-mono">
-            Route: /src/app/what-we-do/media-literacy/page.tsx
-          </p>
-        </div>
-      </div>
-    </div>
+    <main className="min-h-screen bg-[#F5F2ED]">
+      <LiteracyHero data={data.hero} />
+      <DisinfoDeconstruct data={data.anatomy_section} />
+      <CurriculumTracks data={data.tracks} />
+      <ImpactSpread data={data.reach_map} />
+      <CallToAction data={ctaData} />
+    </main>
   );
 }

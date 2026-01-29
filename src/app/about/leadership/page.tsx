@@ -1,19 +1,22 @@
 import React from "react";
+import { LeadershipHero } from "@/components/about/leadership/LeadershipHero";
+import { ExecTeam } from "@/components/about/leadership/ExecTeam";
+import { BoardMembers } from "@/components/about/leadership/BoardMembers";
+import { OrgStructure } from "@/components/about/leadership/OrgStructure";
+import { CallToAction } from "@/components/home/CallToAction";
+import siteContent from "@/data/site-content.json";
 
 export default function LeadershipPage() {
+  const data = siteContent.pages.leadership_page;
+  const cta = siteContent.pages.home.cta_section;
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 capitalize">Leadership</h1>
-        <p className="text-lg text-gray-600 mb-8">
-          This is the Leadership page. Content for this section is currently being developed.
-        </p>
-        <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <p className="text-sm text-gray-500 font-mono">
-            Route: /src/app/about/leadership/page.tsx
-          </p>
-        </div>
-      </div>
-    </div>
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950">
+      <LeadershipHero data={data.hero} />
+      <ExecTeam data={data.executives} />
+      <OrgStructure data={data.org_structure} />
+      <BoardMembers data={data.board} />
+      <CallToAction data={cta} />
+    </main>
   );
 }

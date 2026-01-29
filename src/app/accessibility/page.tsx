@@ -1,19 +1,22 @@
 import React from "react";
+import { AccessHero } from "@/components/accessibility/AccessHero";
+import { AccessFeatures } from "@/components/accessibility/AccessFeatures";
+import { StandardsGrid } from "@/components/accessibility/StandardsGrid";
+import { AccessibilityContact } from "@/components/accessibility/AccessibilityContact";
+import { CallToAction } from "@/components/home/CallToAction"; // Standard CTA
+import siteContent from "@/data/site-content.json";
 
 export default function AccessibilityPage() {
+  const data = siteContent.pages.accessibility_page;
+  const cta = siteContent.pages.home.cta_section;
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 capitalize">Accessibility</h1>
-        <p className="text-lg text-gray-600 mb-8">
-          This is the Accessibility page. Content for this section is currently being developed.
-        </p>
-        <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <p className="text-sm text-gray-500 font-mono">
-            Route: /src/app/accessibility/page.tsx
-          </p>
-        </div>
-      </div>
-    </div>
+    <main className="min-h-screen bg-white dark:bg-slate-950">
+      <AccessHero data={data.hero} />
+      <AccessFeatures data={data.features} />
+      <StandardsGrid data={data.standards} />
+      <AccessibilityContact />
+      <CallToAction data={cta} />
+    </main>
   );
 }

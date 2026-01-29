@@ -1,19 +1,34 @@
 import React from "react";
+import { EmergencyHero } from "@/components/grants/emergency/EmergencyHero";
+import { CoverageScope } from "@/components/grants/emergency/CoverageScope";
+import { SafetySteps } from "@/components/grants/emergency/SafetySteps";
+import { CallToAction } from "@/components/home/CallToAction";
+import siteContent from "@/data/site-content.json";
 
-export default function EmergencysupportPage() {
+export default function EmergencySupportPage() {
+  const data = siteContent.pages.emergency_grant_page;
+
+  // Minimalist CTA for privacy
+  const ctaData = {
+    enabled: true,
+    headline: "Not an emergency?",
+    subheadline:
+      "If you have time to plan, explore our standard project grants.",
+    primary_btn: { label: "View All Grants", url: "/grants" },
+    secondary_btn: {
+      label: "Digital Security Training",
+      url: "/what-we-do/digital-security",
+    },
+    bg_image:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
+  };
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 capitalize">Emergency support</h1>
-        <p className="text-lg text-gray-600 mb-8">
-          This is the Emergency support page. Content for this section is currently being developed.
-        </p>
-        <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <p className="text-sm text-gray-500 font-mono">
-            Route: /src/app/grants/emergency-support/page.tsx
-          </p>
-        </div>
-      </div>
-    </div>
+    <main className="min-h-screen bg-[#1a0505]">
+      <EmergencyHero data={data.hero} />
+      <CoverageScope data={data.eligibility} />
+      <SafetySteps data={data.process_steps} />
+      <CallToAction data={ctaData} />
+    </main>
   );
 }

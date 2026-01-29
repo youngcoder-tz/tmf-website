@@ -95,7 +95,7 @@ const megaMenuItems = [
       title: "2024 Annual Report",
       description: "See how we supported journalism worldwide",
       image: "/api/placeholder/300/180",
-      href: "/about/annual-report",
+      href: "/about/annual-reports",
       badge: "New",
     },
     columns: [
@@ -374,12 +374,6 @@ const megaMenuItems = [
             href: "/resources/safety",
             icon: Lock,
             description: "Risk management",
-          },
-          {
-            title: "Database Access",
-            href: "/resources/database",
-            icon: BarChart3,
-            description: "Research materials",
           },
         ],
       },
@@ -681,10 +675,10 @@ export function MainNavbar() {
       {/* 2. MAIN NAVBAR */}
       <motion.header
         className={cn(
-          "sticky top-0 z-50 w-full transition-all bg-amber-600 duration-500  ",
+          "sticky top-0 z-50 w-full transition-all duration-500  ",
           isScrolled
             ? `bg-white/50 dark:bg-gray-950/40 backdrop-blur-xl   border-gray-200 dark:border-gray-800 shadow-sm py-2`
-            : "bg-transparent py-4"
+            : "bg-transparent py-4",
         )}
       >
         <div className="container mx-auto px-4">
@@ -694,19 +688,13 @@ export function MainNavbar() {
               href="/"
               className="flex items-center gap-3 group relative z-10"
             >
-              <div className="relative">
-                <div className="absolute inset-0 bg-linear-to-br from-blue-600 to-purple-600 rounded-xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity" />
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-blue-600 to-purple-600 shadow-inner border border-white/10 group-hover:scale-105 transition-transform duration-300">
-                  <Globe className="h-7 w-7 text-white" />
-                </div>
-              </div>
-              <div className="hidden lg:block">
-                <h1 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white leading-none">
-                  TMF
-                </h1>
-                <p className="text-[10px] font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mt-0.5">
-                  Media Foundation
-                </p>
+              <div className="block overflow-hidden -ml-4">
+                <Image
+                  src="/logos/tmflogo.png"
+                  alt="Tanzania Media Fund Logo -mb-8"
+                  width={160}
+                  height={20}
+                />
               </div>
             </Link>
 
@@ -735,7 +723,7 @@ export function MainNavbar() {
                                     <div
                                       className={cn(
                                         "p-1.5 rounded-md shadow",
-                                        item.bgColor
+                                        item.bgColor,
                                       )}
                                     >
                                       <item.icon
@@ -759,7 +747,7 @@ export function MainNavbar() {
                                         "absolute inset-0 bg-linear-to-br opacity-20 group-hover:opacity-30 transition-opacity",
                                         item.color === "text-blue-500"
                                           ? "from-blue-500 to-purple-500"
-                                          : "from-gray-500 to-gray-700"
+                                          : "from-gray-500 to-gray-700",
                                       )}
                                     />
                                     <div className="absolute inset-0 flex items-center justify-center">
@@ -803,13 +791,13 @@ export function MainNavbar() {
                                                 <div
                                                   className={cn(
                                                     "mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors group-hover:bg-white dark:group-hover:bg-black border border-transparent group-hover:border-gray-200 dark:group-hover:border-gray-800 shadow-none group-hover:shadow-sm",
-                                                    item.bgColor
+                                                    item.bgColor,
                                                   )}
                                                 >
                                                   <subItem.icon
                                                     className={cn(
                                                       "h-4 w-4",
-                                                      item.color
+                                                      item.color,
                                                     )}
                                                   />
                                                 </div>
@@ -882,7 +870,7 @@ export function MainNavbar() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button
+                  {/* <Button
                     variant="outline"
                     className="hidden md:flex gap-2 rounded-full border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 hover:bg-white dark:hover:bg-gray-800"
                   >
@@ -892,7 +880,7 @@ export function MainNavbar() {
                     </div>
                     <span className="text-sm font-medium">Portals</span>
                     <ChevronDown className="h-3.5 w-3.5 opacity-50" />
-                  </Button>
+                  </Button> */}
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
                   align="end"
@@ -904,13 +892,13 @@ export function MainNavbar() {
                         href={portal.items[0].href}
                         key={portal.title}
                         className={cn(
-                          "py-3 text-center transition-all hover:bg-gray-50 dark:hover:bg-zinc-800 cursor-pointer shadow-lg dark:shadow-black/50 rounded-md "
+                          "py-3 text-center transition-all hover:bg-gray-50 dark:hover:bg-zinc-800 cursor-pointer shadow-lg dark:shadow-black/50 rounded-md ",
                         )}
                       >
                         <div
                           className={cn(
                             "h-12 w-12 rounded-full bg-linear-to-br mx-auto mb-2 flex items-center justify-center",
-                            portal.color
+                            portal.color,
                           )}
                         >
                           <portal.icon className="h-6 w-6 text-white" />
@@ -993,15 +981,14 @@ export function MainNavbar() {
                   {/* Mobile Header */}
                   <SheetHeader className="p-6 border-b border-gray-100 dark:border-gray-800">
                     <SheetTitle className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-lg bg-linear-to-br from-blue-600 to-purple-600 flex items-center justify-center">
-                        <Globe className="h-5 w-5 text-white" />
-                      </div>
                       <div className="text-left">
-                        <div className="font-bold text-lg leading-none">
-                          TMF
-                        </div>
-                        <div className="text-xs text-blue-600 dark:text-blue-400 font-medium mt-1">
-                          Global Media Foundation
+                        <div className="block overflow-hidden -ml-4">
+                          <Image
+                            src="/logos/tmflogo.png"
+                            alt="Tanzania Media Fund Logo -mb-8"
+                            width={180}
+                            height={20}
+                          />
                         </div>
                       </div>
                     </SheetTitle>
@@ -1021,7 +1008,7 @@ export function MainNavbar() {
                       {/* Mobile Navigation */}
                       <div className="px-6">
                         <Tabs defaultValue="menu" className="w-full">
-                          <TabsList className="grid grid-cols-2 sticky top-0 rounded-full shadow">
+                          {/* <TabsList className="grid grid-cols-2 sticky top-0 rounded-full shadow">
                             <TabsTrigger value="menu" className="rounded-full">
                               Navigation
                             </TabsTrigger>
@@ -1031,10 +1018,10 @@ export function MainNavbar() {
                             >
                               Portals
                             </TabsTrigger>
-                          </TabsList>
+                          </TabsList> */}
 
                           {/* Menu Tab */}
-                          <TabsContent value="menu" className="mt-6 space-y-1">
+                          <TabsContent value="menu" className=" space-y-1 ">
                             {megaMenuItems.map((item) => (
                               <details key={item.title} className="group">
                                 <summary className="flex items-center justify-between p-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer list-none">
@@ -1042,7 +1029,7 @@ export function MainNavbar() {
                                     <div
                                       className={cn(
                                         "p-3 rounded-xl",
-                                        item.bgColor
+                                        item.bgColor,
                                       )}
                                     >
                                       <item.icon

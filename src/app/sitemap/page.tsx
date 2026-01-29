@@ -1,19 +1,26 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { SitemapHero } from "@/components/sitemap/SitemapHero";
+import { SitemapGrid } from "@/components/sitemap/SitemapGrid";
+import { CallToAction } from "@/components/home/CallToAction";
+import siteContent from "@/data/site-content.json";
 
 export default function SitemapPage() {
+  const data = siteContent.pages.sitemap_page;
+  const cta = siteContent.pages.home.cta_section;
+
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 capitalize">Sitemap</h1>
-        <p className="text-lg text-gray-600 mb-8">
-          This is the Sitemap page. Content for this section is currently being developed.
-        </p>
-        <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <p className="text-sm text-gray-500 font-mono">
-            Route: /src/app/sitemap/page.tsx
-          </p>
-        </div>
-      </div>
-    </div>
+    <main className="min-h-screen bg-white dark:bg-slate-950">
+      <SitemapHero
+        data={data.hero}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
+      <SitemapGrid clusters={data.clusters} searchTerm={searchTerm} />
+      <CallToAction data={cta} />
+    </main>
   );
 }

@@ -2,11 +2,11 @@
 import HeroSection from "@/components/home/HeroSection";
 import React from "react";
 import { PartnersMarquee } from "@/components/home/PartnersMarquee";
-import { ImpactBentoGrid } from "@/components/home/ImpactBentoGrid";
 import { LiveStatsSection } from "@/components/home/LiveStatsSection";
 import { FeaturedStory } from "@/components/home/FeaturedStory";
 import { ProgramShowcase } from "@/components/home/ProgramShowcase";
 import { CallToAction } from "@/components/home/CallToAction";
+import { ImpactBentoGrid } from "@/components/home/ImpactBentoGrid";
 
 // Load CMS data
 async function getCMSData() {
@@ -58,8 +58,9 @@ export default async function HomePage() {
       <HeroSection data={cmsData.pages?.home?.hero} assets={assets} />
 
       {/* Rest of the page sections */}
-      {/* <PartnersMarquee data={cmsData.pages?.home?.partners} /> */}
+      <PartnersMarquee data={cmsData.pages?.home?.partners} />
       <ImpactBentoGrid data={cmsData.pages?.home?.mission_bento} />
+
       <LiveStatsSection data={cmsData.pages?.home?.stats} />
       <FeaturedStory data={cmsData.pages?.home?.featured_story} />
       <ProgramShowcase data={cmsData.pages?.home?.program_showcase} />

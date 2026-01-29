@@ -1,19 +1,20 @@
 import React from "react";
+import { FinancialHero } from "@/components/about/financials/FinancialHero";
+import { ExpenseBreakdown } from "@/components/about/financials/ExpenseBreakdown";
+import { AuditTable } from "@/components/about/financials/AuditTable";
+import { CallToAction } from "@/components/home/CallToAction";
+import siteContent from "@/data/site-content.json";
 
 export default function FinancialsPage() {
+  const data = siteContent.pages.financials_page;
+  const cta = siteContent.pages.home.cta_section;
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 capitalize">Financials</h1>
-        <p className="text-lg text-gray-600 mb-8">
-          This is the Financials page. Content for this section is currently being developed.
-        </p>
-        <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <p className="text-sm text-gray-500 font-mono">
-            Route: /src/app/about/financials/page.tsx
-          </p>
-        </div>
-      </div>
-    </div>
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950">
+      <FinancialHero data={data.hero} />
+      <ExpenseBreakdown data={data.expense_breakdown} />
+      <AuditTable audits={data.audit_timeline} docs={data.governance_docs} />
+      <CallToAction data={cta} />
+    </main>
   );
 }

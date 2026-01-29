@@ -1,19 +1,20 @@
 import React from "react";
+import { MentorshipHero } from "@/components/what-we-do/mentorship/MentorshipHero";
+import { MentorCarousel } from "@/components/what-we-do/mentorship/MentorCarousel";
+import { MentorshipTimeline } from "@/components/what-we-do/mentorship/MentorshipTimeline";
+import { CallToAction } from "@/components/home/CallToAction";
+import siteContent from "@/data/site-content.json";
 
 export default function MentorshipPage() {
+  const data = siteContent.pages.mentorship_page;
+  const cta = siteContent.pages.home.cta_section;
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 capitalize">Mentorship</h1>
-        <p className="text-lg text-gray-600 mb-8">
-          This is the Mentorship page. Content for this section is currently being developed.
-        </p>
-        <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <p className="text-sm text-gray-500 font-mono">
-            Route: /src/app/what-we-do/mentorship/page.tsx
-          </p>
-        </div>
-      </div>
-    </div>
+    <main className="min-h-screen bg-white dark:bg-slate-950">
+      <MentorshipHero data={{ ...data.hero, stats: data.stats }} />{" "}
+      <MentorshipTimeline data={data.journey} />
+      <MentorCarousel data={data.mentors} />
+      <CallToAction data={cta} />
+    </main>
   );
 }

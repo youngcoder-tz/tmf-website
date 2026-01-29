@@ -57,6 +57,7 @@ import {
 import { cn } from "@/lib/utils";
 import { FooterPartners } from "../shared/FooterPartners";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 
 const footerSections = [
   {
@@ -168,7 +169,11 @@ const footerSections = [
         icon: FileText,
       },
       { label: "Blog & Articles", href: "/newsroom", icon: PenTool },
-      { label: "Events Calendar", href: "/events", icon: Calendar },
+      {
+        label: "Events Calendar",
+        href: "/get-involved/events",
+        icon: Calendar,
+      },
     ],
   },
 ];
@@ -310,32 +315,16 @@ export function Footer() {
                 href="/"
                 className="inline-flex items-center gap-4 group relative"
               >
-                {/* Animated Logo Background */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="absolute -inset-2 rounded-full bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 dark:group-hover:opacity-30 blur-md transition-opacity"
-                />
-
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-linear-to-r from-blue-600 to-purple-600 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity" />
-                  <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-blue-600 to-purple-600 shadow-2xl shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-all duration-300">
-                    <Globe className="h-8 w-8 text-white" />
-                    <div className="absolute -top-1 -right-1">
-                      <SparklesIcon className="h-4 w-4 text-yellow-400 animate-pulse" />
-                    </div>
+                  <div className="block overflow-hidden -ml-10">
+                    <Image
+                      src="/logos/tmflogo.png"
+                      alt="Tanzania Media Fund Logo -mb-8"
+                      width={300}
+                      height={20}
+                    />
                   </div>
-                </div>
-
-                <div className="relative">
-                  <h2 className="text-2xl font-bold bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    Tanzania Media Foundation
-                  </h2>
-                  <p className="text-sm mt-1.5 opacity-80 dark:opacity-90">
+                  <p className="text-xs -mt-7 ml-22 opacity-80 dark:opacity-90">
                     Empowering Media · Transforming Lives
                     <span className="ml-2 inline-flex items-center gap-1">
                       <Heart className="h-3 w-3 text-red-500 animate-pulse" />
@@ -474,7 +463,7 @@ export function Footer() {
                     <div
                       className={cn(
                         "md:p-2 rounded-lg bg-gray-100 dark:bg-gray-800/50",
-                        section.color
+                        section.color,
                       )}
                     >
                       <section.icon className="h-5 w-5" />
@@ -516,7 +505,7 @@ export function Footer() {
                       <div
                         className={cn(
                           "p-2 rounded-lg bg-linear-to-br",
-                          resource.color
+                          resource.color,
                         )}
                       >
                         <resource.icon className="h-6 w-6 text-white" />
@@ -571,7 +560,7 @@ export function Footer() {
                     whileTap={{ scale: 0.95 }}
                     className={cn(
                       "relative p-3 rounded-xl border transition-all duration-300 bg-white border-gray-200 dark:bg-white/5 dark:border-white/10",
-                      social.bgGradient
+                      social.bgGradient,
                     )}
                     aria-label={social.label}
                   >
@@ -580,7 +569,7 @@ export function Footer() {
                       className={cn(
                         "h-5 w-5 relative z-10",
                         "bg-clip-text text-transparent",
-                        social.color
+                        social.color,
                       )}
                     />
                   </motion.a>

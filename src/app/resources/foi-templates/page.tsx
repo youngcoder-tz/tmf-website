@@ -1,19 +1,26 @@
 import React from "react";
+import { FOIHero } from "@/components/resources/foi/FOIHero";
+import { TemplateGallery } from "@/components/resources/foi/TemplateGallery";
+import { CallToAction } from "@/components/home/CallToAction";
+import siteContent from "@/data/site-content.json";
 
-export default function FoitemplatesPage() {
+export default function FOIPage() {
+  const data = siteContent.pages.foi_page;
+  const cta = siteContent.pages.home.cta_section;
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 capitalize">Foi templates</h1>
-        <p className="text-lg text-gray-600 mb-8">
-          This is the Foi templates page. Content for this section is currently being developed.
-        </p>
-        <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <p className="text-sm text-gray-500 font-mono">
-            Route: /src/app/resources/foi-templates/page.tsx
-          </p>
-        </div>
-      </div>
-    </div>
+    <main className="min-h-screen bg-white dark:bg-slate-950">
+      <FOIHero data={data.hero} />
+      <TemplateGallery data={data.templates} />
+      <CallToAction
+        data={{
+          ...cta,
+          headline: "Need Legal Backup?",
+          subheadline:
+            "If your FOI request is rejected, our legal team can help you file an appeal.",
+          primary_btn: { label: "Contact Legal Desk", url: "#" },
+        }}
+      />
+    </main>
   );
 }

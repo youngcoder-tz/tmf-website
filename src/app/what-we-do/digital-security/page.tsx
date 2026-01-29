@@ -1,19 +1,21 @@
 import React from "react";
+import { SecurityHero } from "@/components/what-we-do/security/SecurityHero";
+import { ThreatGrid } from "@/components/what-we-do/security/ThreatGrid";
+import { SecurityTools } from "@/components/what-we-do/security/SecurityTools";
+import { CallToAction } from "@/components/home/CallToAction";
+import siteContent from "@/data/site-content.json";
 
-export default function DigitalsecurityPage() {
+export default function DigitalSecurityPage() {
+  const data = siteContent.pages.digital_security_page;
+  // Use a Cyber CTA
+  const ctaData = { ...siteContent.pages.home.cta_section, bg_theme: "cyber" };
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 capitalize">Digital security</h1>
-        <p className="text-lg text-gray-600 mb-8">
-          This is the Digital security page. Content for this section is currently being developed.
-        </p>
-        <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <p className="text-sm text-gray-500 font-mono">
-            Route: /src/app/what-we-do/digital-security/page.tsx
-          </p>
-        </div>
-      </div>
-    </div>
+    <main className="min-h-screen bg-[#050A0E]">
+      <SecurityHero data={data.hero} />
+      <ThreatGrid data={data.threats} />
+      <SecurityTools data={data.tools} />
+      <CallToAction data={ctaData} />
+    </main>
   );
 }

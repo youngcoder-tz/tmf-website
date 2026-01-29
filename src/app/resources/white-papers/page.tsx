@@ -1,19 +1,29 @@
 import React from "react";
+import { PaperHero } from "@/components/resources/white-papers/PaperHero";
+import { PaperArchive } from "@/components/resources/white-papers/PaperArchive";
+import { CallToAction } from "@/components/home/CallToAction";
+import siteContent from "@/data/site-content.json";
 
-export default function WhitepapersPage() {
+export default function WhitePapersPage() {
+  const data = siteContent.pages.white_papers_page;
+  const cta = siteContent.pages.home.cta_section;
+
+  // Custom "Academic" CTA
+  const academicCTA = {
+    ...cta,
+    headline: "Contribute to the discourse.",
+    subheadline:
+      "We accept abstract submissions from media scholars and practitioners year-round.",
+    primary_btn: { label: "Submit Abstract", url: "#" },
+    bg_image:
+      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2073&auto=format&fit=crop",
+  };
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 capitalize">White papers</h1>
-        <p className="text-lg text-gray-600 mb-8">
-          This is the White papers page. Content for this section is currently being developed.
-        </p>
-        <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <p className="text-sm text-gray-500 font-mono">
-            Route: /src/app/resources/white-papers/page.tsx
-          </p>
-        </div>
-      </div>
-    </div>
+    <main className="min-h-screen bg-[#FDFBF7]">
+      <PaperHero data={data.hero} />
+      <PaperArchive data={data.papers} />
+      <CallToAction data={academicCTA} />
+    </main>
   );
 }

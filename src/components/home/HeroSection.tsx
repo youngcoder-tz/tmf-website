@@ -21,7 +21,7 @@ const ParticleBackground = dynamic(
   () => import("@/components/effects/ParticleBackground"),
   {
     ssr: false,
-  }
+  },
 );
 
 interface UltimateHeroProps {
@@ -54,51 +54,60 @@ export function HeroSection({ data, assets }: UltimateHeroProps) {
 
   // Render headline with animations
   const renderHeadline = () => {
-    // 1. FALLBACK: Matches Image 2 perfectly (Hardcoded)
+    // Shared classes for consistency between Fallback and Dynamic
+    // text-4xl (mobile) -> text-5xl (tablet) -> text-7xl (desktop)
+    const baseClasses =
+      "text-4xl sm:text-5xl  font-russo font-extrabold leading-tight lg:leading-[1.1] tracking-tight text-slate-900 dark:text-white text-left";
+
+    // Gradient classes for the highlighted text
+    const gradientClasses =
+      "text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-amber-400 dark:from-blue-400 dark:to-amber-200";
+
+    // 1. FALLBACK: Hardcoded (Perfectly optimized)
     if (!headline.lines || !Array.isArray(headline.lines)) {
       return (
-        <h1 className="text-5xl md:text-6xl font-russo font-extrabold leading-[1.1] tracking-tight text-slate-900 dark:text-white">
-          Defending the{" "}
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-amber-300 dark:from-blue-400 dark:to-amber-200">
-            Truth
-          </span>
-          , <br />
+        <h1 className={baseClasses}>
+          Defending the <span className={gradientClasses}>Truth,</span>
+          <br />
           Protecting the Storytellers.
         </h1>
       );
     }
 
-    // 2. DYNAMIC: Fixes the logic to prevent awkward breaking
+    // 2. DYNAMIC: Enhanced Logic
     return (
-      <h1 className="text-5xl md:text-6xl font-russo font-extrabold leading-[1.1] tracking-tight text-slate-900 dark:text-white">
+      <h1 className={baseClasses}>
         {headline.lines.map((line: any, index: number) => {
+          const isLastWord = index === headline.lines.length - 1;
+          const isHighlight = line.highlight;
+
           return (
             <React.Fragment key={index}>
               <motion.span
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }} // Reduced y distance for smoother feel
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: animations.entry?.duration || 0.6,
-                  delay: (animations.entry?.stagger_delay || 0.1) * index,
+                  duration: 0.6,
+                  ease: [0.22, 1, 0.36, 1], // Custom ease for "expensive" feel
+                  delay: index * 0.1,
                 }}
                 className={cn(
-                  // Apply gradient if highlighted
-                  line.highlight
-                    ? "text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-amber-300 dark:from-blue-400 dark:to-amber-200"
-                    : ""
+                  "inline-block",
+                  isHighlight ? gradientClasses : "",
                 )}
               >
                 {line.text}
               </motion.span>
 
-              {/* Add space after word if it's not the last one */}
-              {index < headline.lines.length - 1 && " "}
-
-              {/* LOGIC: If this line is the "Highlight" (Truth), add the comma and the break */}
-              {line.highlight && (
+              {/* LOGIC: Handle Spacing and Punctuation */}
+              {isHighlight ? (
+                // If highlighted (Truth), add Comma immediately, then Break
                 <>
                   ,<br />
                 </>
+              ) : (
+                // Otherwise, add a space (unless it's the very last word)
+                !isLastWord && " "
               )}
             </React.Fragment>
           );
@@ -345,7 +354,7 @@ export function HeroSection({ data, assets }: UltimateHeroProps) {
         transition={{ delay: 0.2, duration: 1 }}
         className={cn(
           "absolute top-20 right-50 w-75 h-100 rounded-[2rem] blur-[2px] opacity-70 -rotate-28 overflow-hidden shadow-xl -z-10",
-          card.blur
+          card.blur,
         )}
       >
         <Image
@@ -355,7 +364,7 @@ export function HeroSection({ data, assets }: UltimateHeroProps) {
           className={cn(
             "object-cover",
             card.opacity && `opacity-${card.opacity * 100}`,
-            card.blend_mode && `mix-blend-${card.blend_mode}`
+            card.blend_mode && `mix-blend-${card.blend_mode}`,
           )}
         />
         {/* <div className="absolute inset-0 bg-blue-600/20 mix-blend-overlay" /> */}
@@ -395,7 +404,7 @@ export function HeroSection({ data, assets }: UltimateHeroProps) {
 
         {/* Ambient Glow Blobs */}
         <div className="absolute top-[-20%] left-[-10%] w-125 h-125 bg-blue-500/10 dark:bg-blue-600/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-5%] w-150 h-150 bg-amber-500/10 dark:bg-amber-600/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[-10%] hidden md:block right-[-5%] w-150 h-150 bg-amber-500/10 dark:bg-amber-600/10 rounded-full blur-[100px]" />
       </div>
 
       {/* Main Content */}
@@ -405,18 +414,35 @@ export function HeroSection({ data, assets }: UltimateHeroProps) {
           {/* Animated Badge */}
           {badge.enabled !== false && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-2 w-fit px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 backdrop-blur-sm shadow-sm"
+              initial={{ opacity: 0, y: 16, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="
+      relative flex items-center gap-2 w-fit
+      px-4 py-1.5 rounded-full
+      border border-white/40 dark:border-white/10
+      bg-white/50 dark:bg-white/5
+      backdrop-blur-xl backdrop-saturate-150
+      shadow-[0_8px_30px_rgba(0,0,0,0.06)]
+      dark:shadow-[0_8px_30px_rgba(0,0,0,0.35)]
+      overflow-hidden
+      
+    "
             >
+              {/* Liquid highlight */}
+              <span className="pointer-events-none absolute inset-0 rounded-full bg-linear-to-br from-white/60 via-white/20 to-transparent dark:from-white/10 dark:via-white/5" />
+
+              {/* Inner glow edge */}
+              <span className="pointer-events-none absolute inset-px rounded-full ring-1 ring-white/30 dark:ring-white/10" />
+
               {badge.animation === "ping" && (
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 dark:bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600 dark:bg-blue-500"></span>
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-blue-500/60 dark:bg-blue-400/60 blur-sm animate-ping" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-600 dark:bg-blue-400 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
                 </span>
               )}
-              <span className="text-xs font-bold tracking-wider uppercase text-blue-700 dark:text-blue-300">
+
+              <span className="relative text-xs font-semibold tracking-wide uppercase text-blue-800 dark:text-blue-300">
                 {badge.text || "Global Press Freedom Initiative"}
               </span>
             </motion.div>
@@ -438,7 +464,7 @@ export function HeroSection({ data, assets }: UltimateHeroProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className={cn(
               "text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed font-light",
-              description.show_border && "border-l-2 border-blue-500 pl-4"
+              description.show_border && "border-l-2 border-blue-500 pl-4",
             )}
             style={{ maxWidth: description.max_width }}
           >
@@ -459,7 +485,7 @@ export function HeroSection({ data, assets }: UltimateHeroProps) {
                 className={cn(
                   "group relative md:p-6 p-5 bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold overflow-hidden transition-all hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:-translate-y-1",
                   actions.primary.rounded === "full" && "rounded-full",
-                  actions.primary.animation === "scale" && "hover:scale-105"
+                  actions.primary.animation === "scale" && "hover:scale-105",
                 )}
               >
                 <div className="absolute inset-0 w-full h-full bg-linear-to-r from-slate-800 to-slate-900 dark:from-blue-50 dark:to-white opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -480,7 +506,7 @@ export function HeroSection({ data, assets }: UltimateHeroProps) {
                 onClick={() => setIsVideoModalOpen(true)}
                 className={cn(
                   "group md:p-6 p-5 bg-white/50 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200 dark:border-white/10 text-slate-700 dark:text-white font-medium hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-all flex items-center max-w-45 overflow-hidden sm:max-w-55",
-                  actions.secondary.rounded === "full" && "rounded-full"
+                  actions.secondary.rounded === "full" && "rounded-full",
                 )}
               >
                 <div className="w-8 h-8 rounded-full -ml-2 bg-slate-100 dark:bg-white/10 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-500 transition-colors">
@@ -508,14 +534,18 @@ export function HeroSection({ data, assets }: UltimateHeroProps) {
                 {trustIndicators.avatars &&
                   trustIndicators.avatars.length > 0 && (
                     <div className="flex -space-x-3">
-                      {trustIndicators.avatars.map((src: string, i: number) => (
-                        <img
-                          key={i}
-                          src={src}
-                          alt="supporter"
-                          className="w-10 h-10 rounded-full border-2 border-white dark:border-border object-cover"
-                        />
-                      ))}
+                      {trustIndicators.avatars
+                        .slice(0, 6)
+                        .map((src: string, i: number) => (
+                          <img
+                            key={i}
+                            src={src}
+                            alt="supporter"
+                            className={`w-10 h-10 rounded-full border-2 border-white dark:border-border object-cover ${
+                              i >= 3 ? "hidden md:block" : ""
+                            }`}
+                          />
+                        ))}
                       {trustIndicators.count && (
                         <div className="w-10 h-10 rounded-full shadow bg-slate-100 dark:bg-slate-400/60 backdrop-blur-2xl border-2 border-white dark:border-border flex items-center justify-center text-xs font-bold text-slate-600 dark:text-white">
                           {trustIndicators.count}
@@ -526,7 +556,7 @@ export function HeroSection({ data, assets }: UltimateHeroProps) {
 
                 {/* Label and Rating */}
                 <div>
-                  <p className="text-sm font-semibold text-muted-foreground">
+                  <p className="text-xs md:text-sm font-semibold text-muted-foreground">
                     {trustIndicators.label || "Supported by global community"}
                   </p>
                   {trustIndicators.rating && (

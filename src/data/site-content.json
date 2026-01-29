@@ -389,16 +389,18 @@
       },
       "mission_bento": {
         "metadata": {
-          "id": "mission_bento_v1",
-          "version": "1.0",
-          "author": "TMF Design Team"
+          "id": "mission_bento_v2",
+          "version": "2.0",
+          "author": "TMF Design Team",
+          "theme": "modern_glass"
         },
         "enabled": true,
         "header": {
           "badge": {
             "text": "Our Ecosystem",
-            "color": "blue",
-            "icon": "Cpu"
+            "color": "gradient",
+            "icon": "Network",
+            "animation": "spin_slow"
           },
           "title": "Built for Modern Journalism",
           "description": "We bridge the gap between resources and results with a comprehensive support system designed for the digital age.",
@@ -410,8 +412,9 @@
             "tablet": 2,
             "desktop": 4
           },
-          "gap": "1.5rem",
-          "auto_rows": "minmax(300px, auto)"
+          "gap": "2rem",
+          "auto_rows": "minmax(400px, auto)",
+          "layout": "masonry"
         },
         "cards": [
           {
@@ -430,12 +433,14 @@
             },
             "theme": {
               "type": "light",
-              "gradient": "from-white to-gray-50",
-              "border": "gray-200"
+              "gradient": "from-white/80 via-blue-50/80 to-white/80",
+              "border": "white/20",
+              "glass": true
             },
             "icon": {
               "name": "Globe",
-              "background": "blue"
+              "background": "blue",
+              "animation": "hover_rotate"
             },
             "content": {
               "title": "Global Network",
@@ -443,18 +448,21 @@
               "stat": {
                 "value": "31",
                 "label": "Regions Covered",
-                "trend": "+5"
+                "trend": "+5",
+                "icon": "MapPin"
               }
             },
             "visual": {
               "type": "background_image",
               "url": "https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=2070&auto=format&fit=crop",
               "overlay": "gradient",
-              "blur": false
+              "blur": true,
+              "parallax": true
             },
             "interaction": {
               "hover_effect": "scale",
-              "spotlight": true
+              "spotlight": true,
+              "parallax": true
             }
           },
           {
@@ -473,12 +481,14 @@
             },
             "theme": {
               "type": "dark",
-              "gradient": "from-gray-900 to-black",
-              "border": "white/10"
+              "gradient": "from-gray-900/90 via-black/90 to-gray-900/90",
+              "border": "white/10",
+              "glass": true
             },
             "icon": {
               "name": "Zap",
-              "background": "amber"
+              "background": "amber",
+              "animation": "pulse"
             },
             "content": {
               "title": "Digital Innovation Lab",
@@ -486,17 +496,20 @@
               "status": {
                 "live": true,
                 "label": "LIVE",
-                "color": "red"
+                "color": "red",
+                "pulse": true
               }
             },
             "visual": {
               "type": "code_snippet",
               "content": "{\n  'status': 'encrypting_source',\n  'timestamp': new Date().toISOString(),\n  'secure_channel': 'TLS_1.3',\n  'anonymity_level': 'maximum'\n}",
-              "language": "javascript"
+              "language": "javascript",
+              "animation": "typing"
             },
             "interaction": {
               "hover_effect": "glow",
-              "spotlight": true
+              "spotlight": true,
+              "reveal": "code"
             }
           },
           {
@@ -516,11 +529,13 @@
             "theme": {
               "type": "gradient",
               "gradient": "from-teal-500 via-emerald-600 to-teal-700",
-              "border": "transparent"
+              "border": "transparent",
+              "glass": true
             },
             "icon": {
               "name": "Target",
-              "background": "white"
+              "background": "white",
+              "animation": "bounce"
             },
             "content": {
               "title": "Investigative Journalism",
@@ -528,16 +543,19 @@
               "action": {
                 "label": "View Reports",
                 "url": "/reports",
-                "variant": "light"
+                "variant": "light",
+                "icon": "Eye"
               }
             },
             "visual": {
               "type": "abstract_shape",
-              "color": "white/10"
+              "color": "white/10",
+              "animation": "float"
             },
             "interaction": {
               "hover_effect": "lift",
-              "spotlight": false
+              "spotlight": false,
+              "sparkle": true
             }
           },
           {
@@ -556,12 +574,14 @@
             },
             "theme": {
               "type": "light",
-              "gradient": "from-white to-blue-50",
-              "border": "blue-200"
+              "gradient": "from-white/80 via-blue-50/80 to-white/80",
+              "border": "blue-200/30",
+              "glass": true
             },
             "icon": {
-              "name": "Shield",
-              "background": "blue"
+              "name": "ShieldCheck",
+              "background": "blue",
+              "animation": "shield"
             },
             "content": {
               "title": "Legal Defense",
@@ -569,20 +589,25 @@
               "stats": [
                 {
                   "value": "98%",
-                  "label": "Case Success Rate"
+                  "label": "Case Success",
+                  "icon": "Trophy"
                 },
                 {
                   "value": "500+",
-                  "label": "Lawyers Network"
+                  "label": "Lawyers",
+                  "icon": "UsersRound"
                 }
               ]
             },
             "visual": {
-              "type": "icon_grid"
+              "type": "icon_grid",
+              "icons": ["Shield", "Scale", "Gavel", "Lock"],
+              "animation": "float"
             },
             "interaction": {
               "hover_effect": "scale",
-              "spotlight": true
+              "spotlight": true,
+              "glow": "blue"
             }
           },
           {
@@ -601,12 +626,14 @@
             },
             "theme": {
               "type": "light",
-              "gradient": "from-white to-amber-50",
-              "border": "amber-200"
+              "gradient": "from-white/80 via-amber-50/80 to-white/80",
+              "border": "amber-200/30",
+              "glass": true
             },
             "icon": {
-              "name": "Users",
-              "background": "amber"
+              "name": "HeartHandshake",
+              "background": "amber",
+              "animation": "pulse_slow"
             },
             "content": {
               "title": "Mentorship & Training",
@@ -616,25 +643,59 @@
                   "https://randomuser.me/api/portraits/women/44.jpg",
                   "https://randomuser.me/api/portraits/men/32.jpg",
                   "https://randomuser.me/api/portraits/women/68.jpg",
-                  "https://randomuser.me/api/portraits/men/86.jpg"
+                  "https://randomuser.me/api/portraits/men/86.jpg",
+                  "https://randomuser.me/api/portraits/women/65.jpg",
+                  "https://randomuser.me/api/portraits/men/75.jpg"
                 ],
                 "count": "+150",
-                "label": "Active Mentors"
+                "label": "Active Mentors",
+                "growth": "+12 this month"
               }
             },
             "visual": {
-              "type": "avatars"
+              "type": "avatars",
+              "animation": "stack",
+              "interactive": true
             },
             "interaction": {
               "hover_effect": "scale",
-              "spotlight": true
+              "spotlight": true,
+              "avatar_hover": true
             }
           }
         ],
         "animation": {
           "stagger_delay": 0.1,
-          "duration": 0.5,
-          "easing": "easeOut"
+          "duration": 0.6,
+          "easing": "easeOut",
+          "type": "spring",
+          "stiffness": 100
+        },
+        "effects": {
+          "particles": true,
+          "gradient_borders": true,
+          "glass_morphism": true,
+          "noise_texture": true,
+          "floating_shapes": true
+        },
+        "cta": {
+          "enabled": true,
+          "title": "Ready to Make an Impact?",
+          "description": "Join our global network of journalists and changemakers. Together, we're building the future of journalism.",
+          "buttons": [
+            {
+              "label": "Join Our Network",
+              "variant": "primary",
+              "icon": "UsersRound"
+            },
+            {
+              "label": "View Case Studies",
+              "variant": "outline",
+              "icon": "ArrowRight"
+            }
+          ],
+          "style": "glass",
+          "animation": "fade_up"
         }
       },
       "stats": {
@@ -643,8 +704,9 @@
           "title": "Impact by Numbers",
           "subtitle": "Transparent results from our 2024 Annual Report.",
           "cta_label": "View Full Dashboard",
-          "cta_url": "/impact"
+          "cta_url": "/impact/dashboard"
         },
+
         "metrics": [
           {
             "id": "grants",
@@ -652,7 +714,8 @@
             "value": 2500,
             "suffix": "+",
             "color": "blue",
-            "icon": "Banknote"
+            "icon": "Banknote",
+            "description": "Funding innovative projects worldwide."
           },
           {
             "id": "journalists",
@@ -660,7 +723,8 @@
             "value": 10000,
             "suffix": "+",
             "color": "emerald",
-            "icon": "Users"
+            "icon": "Users",
+            "description": "Training journalists for responsible reporting."
           },
           {
             "id": "stations",
@@ -668,7 +732,8 @@
             "value": 150,
             "suffix": "",
             "color": "purple",
-            "icon": "Radio"
+            "icon": "Radio",
+            "description": "Collaborating with media stations globally."
           },
           {
             "id": "lives",
@@ -676,10 +741,12 @@
             "value": 5,
             "suffix": "M+",
             "color": "pink",
-            "icon": "Heart"
+            "icon": "Heart",
+            "description": "Reaching millions through support programs."
           }
         ]
       },
+
       "featured_story": {
         "enabled": true,
         "badge": "Spotlight Story",
@@ -687,17 +754,38 @@
         "excerpt": "When flash floods hit the Kilombero district, mainstream media was silent. Using TMF-funded equipment, a local community radio station broadcasted evacuation routes for 72 hours straight, saving an estimated 500 lives.",
         "image": "https://images.unsplash.com/photo-1495978866932-92dbc079e62e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80",
         "meta": {
-          "read_time": "5 min read",
           "author": "Sarah M.",
-          "views": "12k+"
+          "views": "12k+",
+          "role": "Field Correspondent"
         },
         "quote": {
           "text": "Information is aid. Without the radio, we wouldn't have known which way to run.",
-          "author": "Village Elder"
+          "author": "Village Elder",
+          "role": "Community Leader"
         },
         "cta": {
           "label": "Read Full Story",
-          "url": "/stories/kilombero-radio"
+          "url": "/stories/kilombero-radio",
+          "secondary": {
+            "label": "Watch Documentary",
+            "url": "/media/documentary/kilombero"
+          }
+        },
+        "media": {
+          "has_video": true,
+          "video_url": "/media/videos/kilombero-rescue.mp4",
+          "audio_available": true,
+          "audio_url": "/media/audio/kilombero-interview.mp3"
+        },
+        "location": {
+          "name": "Kilombero Valley",
+          "coordinates": "-8.53, 36.95",
+          "region": "Morogoro Region"
+        },
+        "interactions": {
+          "likes": "2.4k",
+          "shares": "856",
+          "comments": "342"
         }
       },
       "program_showcase": {
@@ -947,6 +1035,442 @@
         ]
       }
     },
+    "leadership_page": {
+      "hero": {
+        "badge": "Governance",
+        "title": "Led by Experience.",
+        "subtitle": "Our leadership team combines decades of experience in journalism, international law, and non-profit management. We are governed by an independent Board of Directors.",
+        "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2664&auto=format&fit=crop"
+      },
+      "executives": [
+        {
+          "name": "Ernest Sungura",
+          "role": "Executive Director",
+          "bio": "25+ years in media management. Former Secretary General of the Tanzania Media Council.",
+          "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop",
+          "linkedin": "#"
+        },
+        {
+          "name": "Fausta Musokwa",
+          "role": "Director of Programs",
+          "bio": "Development specialist with a focus on grant-making systems and gender equity.",
+          "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop",
+          "linkedin": "#"
+        },
+        {
+          "name": "David Mkwawa",
+          "role": "Head of Finance",
+          "bio": "Certified Public Accountant (CPA) responsible for TMF's clean audit record since 2015.",
+          "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
+          "linkedin": "#"
+        }
+      ],
+      "board": [
+        {
+          "name": "Dr. Amani M.",
+          "role": "Board Chair",
+          "background": "Retired Judge, High Court of Tanzania"
+        },
+        {
+          "name": "Prof. Sarah J.",
+          "role": "Board Member",
+          "background": "Dean of Journalism, UDSM"
+        },
+        {
+          "name": "Mr. John K.",
+          "role": "Audit Committee Chair",
+          "background": "Partner, KPMG East Africa"
+        },
+        {
+          "name": "Ms. Halima B.",
+          "role": "Board Member",
+          "background": "Human Rights Advocate, LHRC"
+        }
+      ],
+      "org_structure": {
+        "headline": "Operational Structure",
+        "departments": [
+          {
+            "name": "Programmes",
+            "count": 12,
+            "desc": "Grant Management & Learning"
+          },
+          { "name": "Finance & Admin", "count": 8, "desc": "Compliance & HR" },
+          { "name": "Digital Lab", "count": 5, "desc": "Innovation & IT" },
+          { "name": "M&E", "count": 4, "desc": "Impact Assessment" }
+        ]
+      }
+    },
+    "network_page": {
+      "hero": {
+        "badge": "Ecosystem Architecture",
+        "title": "A Pan-African Media Grid.",
+        "subtitle": "TMF operates as the central node in a vast network of 75+ global partners. We bridge grassroots reporting in Tanzania with international funding, technology, and policy advocacy.",
+        "active_connections": "14 Active Cross-Border Investigations"
+      },
+      "map_nodes": [
+        {
+          "id": "dar",
+          "city": "Dar es Salaam",
+          "role": "HQ & Operations",
+          "x": 60,
+          "y": 65,
+          "pulse": true
+        },
+        {
+          "id": "nbo",
+          "city": "Nairobi",
+          "role": "Tech Innovation Hub",
+          "x": 62,
+          "y": 60,
+          "pulse": true
+        },
+        {
+          "id": "dc",
+          "city": "Washington DC",
+          "role": "Strategic Funding",
+          "x": 25,
+          "y": 35,
+          "pulse": false
+        },
+        {
+          "id": "lon",
+          "city": "London",
+          "role": "Policy Advocacy",
+          "x": 48,
+          "y": 25,
+          "pulse": false
+        },
+        {
+          "id": "jhb",
+          "city": "Johannesburg",
+          "role": "Investigative Network",
+          "x": 58,
+          "y": 85,
+          "pulse": false
+        },
+        {
+          "id": "brx",
+          "city": "Brussels",
+          "role": "EU Relations",
+          "x": 50,
+          "y": 28,
+          "pulse": false
+        }
+      ],
+      "regional_hubs": [
+        {
+          "city": "Dar es Salaam",
+          "type": "Headquarters",
+          "focus": "Grant Management & Strategy",
+          "image": "https://images.unsplash.com/photo-1605218439972-7dbb94924c7a?q=80&w=2067&auto=format&fit=crop",
+          "stats": ["35 Staff", "Grant Control"]
+        },
+        {
+          "city": "Nairobi",
+          "type": "Partner Hub",
+          "focus": "Digital Innovation & AI Lab",
+          "image": "https://images.unsplash.com/photo-1449824913929-49aa7649720b?q=80&w=2070&auto=format&fit=crop",
+          "stats": ["Tech Stack", "Developers"]
+        },
+        {
+          "city": "Kigoma",
+          "type": "Field Office",
+          "focus": "Rural Radio Coordination",
+          "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=2072&auto=format&fit=crop",
+          "stats": ["20 Stations", "Training"]
+        }
+      ],
+      "partner_ecosystem": {
+        "headline": "Our Global Coalition.",
+        "subheadline": "We co-create solutions with the world's leading technology, development, and media organizations.",
+        "featured_alliances": [
+          {
+            "name": "Google News Initiative",
+            "tier": "Tech Partner",
+            "project": "AI Fact-Checking Tools",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png",
+            "desc": "Providing cloud credits and engineering support for our Neno-Check platform to automate verification.",
+            "link": "#"
+          },
+          {
+            "name": "USAID",
+            "tier": "Funding Partner",
+            "project": "Boresha Habari",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/USAID-Identity.svg/2560px-USAID-Identity.svg.png",
+            "desc": "A 5-year, $12M commitment to strengthening media viability and financial sustainability across Tanzania.",
+            "link": "#"
+          },
+          {
+            "name": "BBC Media Action",
+            "tier": "Learning Partner",
+            "project": "Leadership Academy",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/BBC_Media_Action_logo.svg/1200px-BBC_Media_Action_logo.svg.png",
+            "desc": "Co-developing the curriculum for our Executive Fellowship program, bringing global standards to local newsrooms.",
+            "link": "#"
+          }
+        ],
+        "network_directory": [
+          {
+            "title": "Funding Partners",
+            "desc": "The bilateral donors and foundations that power our grants.",
+            "partners": [
+              {
+                "name": "EU",
+                "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1200px-Flag_of_Europe.svg.png"
+              },
+              {
+                "name": "UNESCO",
+                "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/UNESCO_Logo.svg/2560px-UNESCO_Logo.svg.png"
+              },
+              {
+                "name": "SIDA",
+                "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/1600px-Flag_of_Sweden.svg.png"
+              }
+            ]
+          },
+          {
+            "title": "Technical Partners",
+            "desc": "Organizations providing software, training, and infrastructure.",
+            "partners": [
+              {
+                "name": "Microsoft",
+                "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png"
+              },
+              {
+                "name": "Vodacom",
+                "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Vodacom_Logo.svg/2560px-Vodacom_Logo.svg.png"
+              },
+              {
+                "name": "Internews",
+                "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Internews_logo.svg/1200px-Internews_logo.svg.png"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "financials_page": {
+      "hero": {
+        "badge": "Fiscal Responsibility",
+        "title": "Every Shilling Counts.",
+        "subtitle": "Radical transparency is our core value. We maintain an unqualified audit opinion for 15 consecutive years, ensuring every donor dollar reaches its intended beneficiary.",
+        "efficiency_score": 92
+      },
+      "expense_breakdown": {
+        "total": "$12.5M",
+        "year": "FY 2024",
+        "segments": [
+          {
+            "label": "Direct Grant-Making",
+            "value": 65,
+            "color": "emerald",
+            "desc": "Funds distributed directly to journalists and media houses."
+          },
+          {
+            "label": "Program Delivery",
+            "value": 25,
+            "color": "teal",
+            "desc": "Training workshops, mentorship, and field support."
+          },
+          {
+            "label": "Administration",
+            "value": 10,
+            "color": "slate",
+            "desc": "Office overheads, compliance, and staff salaries."
+          }
+        ]
+      },
+      "audit_timeline": [
+        {
+          "year": "2023",
+          "firm": "KPMG",
+          "opinion": "Unqualified",
+          "assets": "$3.2M",
+          "download": "#"
+        },
+        {
+          "year": "2022",
+          "firm": "PwC",
+          "opinion": "Unqualified",
+          "assets": "$2.8M",
+          "download": "#"
+        },
+        {
+          "year": "2021",
+          "firm": "PwC",
+          "opinion": "Unqualified",
+          "assets": "$2.5M",
+          "download": "#"
+        },
+        {
+          "year": "2020",
+          "firm": "Deloitte",
+          "opinion": "Unqualified",
+          "assets": "$2.1M",
+          "download": "#"
+        }
+      ],
+      "governance_docs": [
+        { "title": "Anti-Fraud Policy", "size": "PDF" },
+        { "title": "Procurement Manual", "size": "PDF" },
+        { "title": "Whistleblower Protection", "size": "PDF" },
+        { "title": "Conflict of Interest", "size": "PDF" }
+      ]
+    },
+    "awards_page": {
+      "hero": {
+        "badge": "Excellence Recognized",
+        "title": "A Legacy of Laurels.",
+        "subtitle": "From local press clubs to international human rights bodies, TMF and its grantees have been honored for courage, innovation, and impact.",
+        "total_wins": "45 International Awards"
+      },
+      "hall_of_fame": [
+        {
+          "year": "2024",
+          "award": "Global Investigative Journalism Award",
+          "category": "Corruption Reporting",
+          "winner": "The Chanzo (Grantee)",
+          "project": "The Gold Smuggling Ring",
+          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop"
+        },
+        {
+          "year": "2023",
+          "award": "One World Media Award",
+          "category": "Women's Solutions",
+          "winner": "TMF Secretariat",
+          "project": "Women in Media Leadership Program",
+          "image": "https://images.unsplash.com/photo-1621600411688-4be93cd68504?q=80&w=2070&auto=format&fit=crop"
+        },
+        {
+          "year": "2022",
+          "award": "Digital Human Rights Award",
+          "category": "Innovation",
+          "winner": "Jamii Forums",
+          "project": "Whistleblower Safe Haven",
+          "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
+        }
+      ],
+      "recognition_list": [
+        {
+          "year": "2021",
+          "title": "Best NGO Report",
+          "org": "Tanzania NGO Council"
+        },
+        {
+          "year": "2020",
+          "title": "Transparency Champion",
+          "org": "Information Coalition"
+        },
+        {
+          "year": "2019",
+          "title": "Best Community Radio Initiative",
+          "org": "Internews"
+        },
+        {
+          "year": "2018",
+          "title": "Excellence in Media Development",
+          "org": "UNESCO"
+        }
+      ]
+    },
+    "testimonials_page": {
+      "hero": {
+        "badge": "Community Voices",
+        "title": "They Tell Our Story Best.",
+        "subtitle": "From the rural districts of Kigoma to the newsrooms of Dar es Salaam—hear from the journalists, partners, and citizens we serve.",
+        "rating": "4.9/5 Average Impact Score"
+      },
+      "featured_quote": {
+        "text": "TMF didn't just give us money. They gave us the courage to speak truth to power when no one else would support us.",
+        "author": "Juma M., Station Manager, Radio Kwizera",
+        "image": "https://images.unsplash.com/photo-1531384441138-2736e62e0919?q=80&w=1974&auto=format&fit=crop"
+      },
+      "audio_stories": [
+        {
+          "title": "Voice from Mtwara",
+          "desc": "How training changed my reporting.",
+          "duration": "1:20",
+          "audio_url": "#"
+        },
+        {
+          "title": "Impact in Dodoma",
+          "desc": "Coverage of the water crisis.",
+          "duration": "2:45",
+          "audio_url": "#"
+        }
+      ],
+      "wall_of_love": [
+        {
+          "type": "twitter",
+          "handle": "@EditorTanzania",
+          "content": "Just finished the Data Journalism bootcamp by @TMF_Tanzania. My mind is blown. The tools we learned today will change how we cover the election. 🇹🇿 #MediaTech",
+          "date": "2 days ago"
+        },
+        {
+          "type": "quote",
+          "author": "Minister of Information (Ret.)",
+          "content": "A vital pillar of our democracy. TMF has consistently raised the bar for professional standards in this country.",
+          "role": "Government Official"
+        },
+        {
+          "type": "email",
+          "subject": "Thank you for the grant",
+          "content": "Dear Fausta, I am writing to express my deepest gratitude. The safety gear you provided allowed our team to cover the protests without fear...",
+          "author": "Investigative Team, The Guardian"
+        },
+        {
+          "type": "linkedin",
+          "author": "Sarah Juma",
+          "role": "Digital Strategist",
+          "content": "Proud to partner with TMF on their new digital rights initiative. They are the only org truly understanding the tech gap in local media.",
+          "date": "1 week ago"
+        }
+      ]
+    },
+    "annual_report_microsite": {
+      "hero": {
+        "year": "2024",
+        "title": "Resilience in Action.",
+        "subtitle": "In a year of global uncertainty, Tanzanian media stood firm. This is our story of impact.",
+        "video_bg": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-city-traffic-at-night-11-large.mp4"
+      },
+      "directors_letter": {
+        "title": "A Note from Ernest",
+        "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop",
+        "text": "This year tested us. From regulatory shifts to economic headwinds, the independent press faced existential threats. Yet, we didn't just survive; we innovated. We funded 120 investigations, launched the Digital Lab, and protected 15 journalists from prosecution...",
+        "signature": "Ernest Sungura, Executive Director"
+      },
+      "year_highlights": [
+        {
+          "stat": "TZS 4.5B",
+          "label": "Granted",
+          "desc": "Directly into newsrooms."
+        },
+        {
+          "stat": "2.1M",
+          "label": "New Readers",
+          "desc": "Engaged via digital channels."
+        },
+        {
+          "stat": "5",
+          "label": "Laws Changed",
+          "desc": "Due to investigative reports."
+        }
+      ],
+      "top_stories": [
+        {
+          "title": "The Water Crisis Exposed",
+          "category": "Investigation",
+          "image": "https://images.unsplash.com/photo-1590111161276-88686e92976d?q=80&w=2070&auto=format&fit=crop"
+        },
+        {
+          "title": "Women in News Summit",
+          "category": "Event",
+          "image": "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop"
+        }
+      ]
+    },
     "grants_page": {
       "hero": {
         "title": "Funding & Opportunities",
@@ -1128,13 +1652,6 @@
               "icon": "Lock",
               "href": "/resources/safety",
               "count": "Checklist"
-            },
-            {
-              "title": "Database Access",
-              "desc": "Searchable public records and media directories.",
-              "icon": "BarChart3",
-              "href": "/resources/database",
-              "count": "Live Portal"
             }
           ]
         }
@@ -1395,6 +1912,194 @@
           "cover": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop",
           "summary": "Supporting journalists during the general election cycle.",
           "assets": [{ "type": "Annual Report", "size": "14MB" }]
+        }
+      ]
+    },
+    "white_papers_page": {
+      "hero": {
+        "badge": "Thought Leadership",
+        "title": "The Future of Information.",
+        "subtitle": "Theoretical frameworks and strategic projections for the Tanzanian media ecosystem over the next decade.",
+        "featured_paper": {
+          "title": "The Algorithm as Editor: Ethics in AI Newsrooms",
+          "author": "Dr. Sarah Juma, PhD",
+          "date": "October 2024"
+        }
+      },
+      "papers": [
+        {
+          "id": "1",
+          "title": "Sustainable Funding Models for Digital Natives",
+          "abstract": "Moving beyond the grant economy. A proposal for hybrid subscription-membership models tailored for the East African micropayment landscape.",
+          "author": "Economic Desk",
+          "pages": "24 Pages",
+          "citation": "TMF. (2024). Sustainable Funding Models. Dar es Salaam.",
+          "tags": ["Economics", "Sustainability"]
+        },
+        {
+          "id": "2",
+          "title": "Regulatory Sandboxes for Media Innovation",
+          "abstract": "Why Tanzania needs a legal framework that allows news startups to experiment with blockchain and decentralized publishing without fear of censorship.",
+          "author": "Legal & Policy Unit",
+          "pages": "18 Pages",
+          "citation": "TMF. (2024). Regulatory Sandboxes. Dar es Salaam.",
+          "tags": ["Policy", "Innovation"]
+        },
+        {
+          "id": "3",
+          "title": "The Rural Data Gap",
+          "abstract": "While urban centers are data-rich, rural decision-making remains analog. How community radio can bridge the digital divide.",
+          "author": "Research Team",
+          "pages": "32 Pages",
+          "citation": "TMF. (2023). Rural Data Gap. Dar es Salaam.",
+          "tags": ["Development", "Radio"]
+        },
+        {
+          "id": "4",
+          "title": "Journalism in the Age of Surveillance",
+          "abstract": "A theoretical approach to source protection when encryption is outlawed or compromised.",
+          "author": "Security Desk",
+          "pages": "15 Pages",
+          "citation": "TMF. (2023). Journalism & Surveillance. Dar es Salaam.",
+          "tags": ["Security", "Rights"]
+        }
+      ]
+    },
+    "white_papers_pages": {
+      "hero": {
+        "badge": "Intellectual Capital",
+        "title": "Defining the Conversation.",
+        "subtitle": "Expert analysis on the intersection of media, technology, and democracy. These papers shape policy and inform donor strategy across East Africa.",
+        "total_citations": "1,240+"
+      },
+      "featured_paper": {
+        "tag": "New Release",
+        "title": "The Algorithm of Bias: AI in African Newsrooms",
+        "author": "Dr. Sarah Juma & Prof. David M.",
+        "date": "October 2024",
+        "abstract": "As generative AI tools flood newsrooms, we analyze the hidden biases in Western-trained models when applied to Swahili and local dialects. This paper proposes a framework for 'Sovereign AI' in Tanzanian media.",
+        "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
+        "citations": 45,
+        "download_link": "#"
+      },
+      "papers_list": [
+        {
+          "id": "1",
+          "year": "2024",
+          "title": "Sustainability Beyond Ads: The Membership Model",
+          "author": "TMF Strategy Unit",
+          "desc": "A case study of 5 newsrooms that successfully transitioned from ad-revenue to reader-revenue models.",
+          "pages": "42 Pages",
+          "size": "2.4 MB"
+        },
+        {
+          "id": "2",
+          "year": "2023",
+          "title": "Silence in the Villages: The Radio Gap",
+          "author": "Erick Kabendera",
+          "desc": "Mapping the 'news deserts' in Southern Tanzania and the impact on local governance.",
+          "pages": "28 Pages",
+          "size": "1.8 MB"
+        },
+        {
+          "id": "3",
+          "year": "2023",
+          "title": "Digital Rights & The Cybercrimes Act",
+          "author": "Legal Defense Fund",
+          "desc": "Legal analysis of recent amendments and their chilling effect on investigative blogging.",
+          "pages": "60 Pages",
+          "size": "5.1 MB"
+        },
+        {
+          "id": "4",
+          "year": "2022",
+          "title": "Trust Metrics in the Disinformation Age",
+          "author": "Research Dept.",
+          "desc": "Quantitative analysis of audience trust levels across Radio, TV, and Social Media platforms.",
+          "pages": "35 Pages",
+          "size": "3.0 MB"
+        }
+      ]
+    },
+    "foi_page": {
+      "hero": {
+        "badge": "Legal Utility",
+        "title": "Unlock Public Records.",
+        "subtitle": "Standardized templates for requesting information from government ministries, local councils, and parastatals under the Access to Information Act.",
+        "law_ref": "Pursuant to Act No. 6 of 2016"
+      },
+      "templates": [
+        {
+          "id": "1",
+          "title": "Municipal Budget Request",
+          "target": "Local Government Authority (LGA)",
+          "desc": "Requesting detailed expenditure reports for local development projects.",
+          "difficulty": "Low",
+          "format": ".DOCX"
+        },
+        {
+          "id": "2",
+          "title": "Procurement Tender Details",
+          "target": "Ministry / Agency",
+          "desc": "Demanding transparency on winning bids and contract values.",
+          "difficulty": "Medium",
+          "format": ".DOCX"
+        },
+        {
+          "id": "3",
+          "title": "Public Official Asset Declaration",
+          "target": "Ethics Secretariat",
+          "desc": "Requesting verification of declared assets for elected officials.",
+          "difficulty": "High",
+          "format": ".PDF / .DOCX"
+        },
+        {
+          "id": "4",
+          "title": "Land Ownership Query",
+          "target": "Ministry of Lands",
+          "desc": "Investigating ownership history of contested land parcels.",
+          "difficulty": "Medium",
+          "format": ".DOCX"
+        }
+      ]
+    },
+    "safety_page": {
+      "hero": {
+        "badge": "Field Manual",
+        "title": "Safety Protocols.",
+        "subtitle": "Standard operating procedures for risk assessment, conflict zones, and arrest situations.",
+        "urgent_action": "Download Offline Guide (2MB)"
+      },
+      "protocols": [
+        {
+          "id": "arrest",
+          "title": "In Case of Arrest",
+          "icon": "Handcuffs",
+          "steps": [
+            "Do not surrender your phone PIN or passwords.",
+            "Demand to speak to a lawyer immediately.",
+            "Contact the TMF Legal Hotline via signal if possible."
+          ]
+        },
+        {
+          "id": "riot",
+          "title": "Civil Unrest Coverage",
+          "icon": "Shield",
+          "steps": [
+            "Wear a press vest clearly marked.",
+            "Always work in pairs.",
+            "Identify escape routes before entering a crowd."
+          ]
+        },
+        {
+          "id": "device",
+          "title": "Device Seizure",
+          "icon": "Smartphone",
+          "steps": [
+            "Ensure full-disk encryption is active before fieldwork.",
+            "Set up a remote wipe capability.",
+            "Do not use biometrics (FaceID/Fingerprint) in high-risk zones."
+          ]
         }
       ]
     },
@@ -2280,6 +2985,54 @@
         }
       ]
     },
+    "emergency_grant_page": {
+      "hero": {
+        "badge": "Crisis Response",
+        "title": "Journalist Distress Fund.",
+        "subtitle": "Immediate financial and legal assistance for media workers facing arbitrary arrest, physical assault, or digital threats.",
+        "emergency_contact": "Signal: +255 7XX XXX XXX",
+        "turnaround_time": "24 Hours"
+      },
+      "eligibility": [
+        {
+          "title": "Legal Emergencies",
+          "desc": "Bail processing, lawyer fees, and court representation.",
+          "icon": "Gavel"
+        },
+        {
+          "title": "Medical Needs",
+          "desc": "Emergency treatment for injuries sustained in the line of duty.",
+          "icon": "HeartPulse"
+        },
+        {
+          "title": "Digital Attacks",
+          "desc": "Recovery of hacked accounts or replacement of seized devices.",
+          "icon": "Laptop"
+        },
+        {
+          "title": "Relocation",
+          "desc": "Temporary safe housing for verified threats to life.",
+          "icon": "Home"
+        }
+      ],
+      "process_steps": [
+        {
+          "id": "01",
+          "label": "Secure Contact",
+          "desc": "Use Signal/WhatsApp or our encrypted form."
+        },
+        {
+          "id": "02",
+          "label": "Verification",
+          "desc": "We verify your status with your editor/network."
+        },
+        {
+          "id": "03",
+          "label": "Transfer",
+          "desc": "Funds sent via Mobile Money (M-Pesa/Tigo)."
+        }
+      ]
+    },
     "grantee_showcase": {
       "hero": {
         "badge": "Project Spotlight",
@@ -3100,6 +3853,525 @@
           ],
           "icon": "Users",
           "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2070&auto=format&fit=crop"
+        }
+      ]
+    },
+    "mentorship_page": {
+      "hero": {
+        "badge": "Expert Guidance",
+        "title": "Standing on the Shoulders of Giants.",
+        "subtitle": "We pair emerging talent with veteran editors for a 6-month intensive coaching journey. It's not just advice; it's a career transformation.",
+        "image": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=1974&auto=format&fit=crop"
+      },
+      "stats": [
+        { "value": "150+", "label": "Mentorship Pairs" },
+        { "value": "12", "label": "Countries Represented" },
+        { "value": "450", "label": "Hours of Coaching" }
+      ],
+      "mentors": [
+        {
+          "name": "Joyce M.",
+          "role": "Former Editor, BBC Swahili",
+          "specialty": "Broadcast Journalism",
+          "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop"
+        },
+        {
+          "name": "Erick K.",
+          "role": "Investigative Lead",
+          "specialty": "Data & Corruption",
+          "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop"
+        },
+        {
+          "name": "Fatma A.",
+          "role": "Digital Strategist",
+          "specialty": "New Media Business Models",
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1000&auto=format&fit=crop"
+        }
+      ],
+      "journey": [
+        {
+          "month": "Month 1",
+          "title": "Matching",
+          "desc": "Paired based on career goals."
+        },
+        {
+          "month": "Month 2-3",
+          "title": "Goal Setting",
+          "desc": "Defining the capstone project."
+        },
+        {
+          "month": "Month 4-5",
+          "title": "Execution",
+          "desc": "Weekly check-ins during reporting."
+        },
+        {
+          "month": "Month 6",
+          "title": "Graduation",
+          "desc": "Presentation to media executives."
+        }
+      ]
+    },
+    "digital_security_page": {
+      "hero": {
+        "badge": "Cyber Defense",
+        "title": "Protecting the Source.",
+        "subtitle": "In an era of digital surveillance, we arm journalists with military-grade encryption and operational security protocols.",
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop"
+      },
+      "threats": [
+        {
+          "title": "Surveillance",
+          "desc": "Mitigating tracking via IMSI catchers and spyware.",
+          "icon": "Eye"
+        },
+        {
+          "title": "Data Theft",
+          "desc": "Securing laptops and drives with full-disk encryption.",
+          "icon": "HardDrive"
+        },
+        {
+          "title": "Doxxing",
+          "desc": "Removing personal data from open web databases.",
+          "icon": "UserX"
+        }
+      ],
+      "curriculum": [
+        { "module": "01", "topic": "End-to-End Encryption" },
+        { "module": "02", "topic": "Secure File Storage" },
+        { "module": "03", "topic": "Anti-Phishing Tactics" },
+        { "module": "04", "topic": "Device Hardening" }
+      ],
+      "tools": [
+        { "name": "Signal", "type": "Comms", "icon": "MessageSquare" },
+        { "name": "Veracrypt", "type": "Storage", "icon": "Lock" },
+        { "name": "Tor Browser", "type": "Anonymity", "icon": "Globe" },
+        { "name": "YubiKey", "type": "Hardware", "icon": "Key" }
+      ]
+    },
+    "media_literacy_page": {
+      "hero": {
+        "badge": "Civic Education",
+        "title": "Inoculating the Public Against Disinformation.",
+        "subtitle": "Truth is under attack. We empower citizens, students, and educators with the critical thinking tools needed to navigate the digital age.",
+        "image": "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=2070&auto=format&fit=crop"
+      },
+      "anatomy_section": {
+        "headline": "The Anatomy of Disinformation",
+        "subheadline": "We teach the 5 pillars of verification. Hover to explore.",
+        "points": [
+          {
+            "id": 1,
+            "label": "Source",
+            "desc": "Is the URL legitimate? Who owns the domain?"
+          },
+          {
+            "id": 2,
+            "label": "Date",
+            "desc": "Is this an old photo repurposed for a new context?"
+          },
+          {
+            "id": 3,
+            "label": "Emotion",
+            "desc": "Is the headline designed to trigger rage or fear?"
+          },
+          {
+            "id": 4,
+            "label": "Evidence",
+            "desc": "Does the article link to primary documents?"
+          }
+        ]
+      },
+      "tracks": [
+        {
+          "title": "For Schools",
+          "audience": "Students 14-18",
+          "desc": "A turnkey curriculum for Civics teachers. Workshops on algorithm literacy and digital hygiene.",
+          "icon": "School",
+          "modules": ["The Algorithm & You", "Cyberbullying Defense"]
+        },
+        {
+          "title": "For Communities",
+          "audience": "General Public",
+          "desc": "Town-hall style debates and radio call-in shows explaining how to spot political propaganda.",
+          "icon": "Users",
+          "modules": ["Election Watch", "WhatsApp Forwarding Etiquette"]
+        },
+        {
+          "title": "For Newsrooms",
+          "audience": "Journalists",
+          "desc": "Advanced verification tools (Geolocation, Metadata Analysis) for the verification desk.",
+          "icon": "Newspaper",
+          "modules": ["Deepfake Detection", "Source Protection"]
+        }
+      ],
+      "reach_map": {
+        "headline": "Impact Radius",
+        "stats": [
+          { "value": "120", "label": "Schools Partnered" },
+          { "value": "15k", "label": "Students Trained" },
+          { "value": "800", "label": "Teachers Certified" }
+        ]
+      }
+    },
+    "accessibility_page": {
+      "hero": {
+        "badge": "Universal Access",
+        "title": "Built for Everyone.",
+        "subtitle": "We are committed to ensuring our digital platforms are accessible to people with disabilities. Journalism is for the people—all people.",
+        "conformance": "WCAG 2.1 Level AA Compliant"
+      },
+      "features": [
+        {
+          "title": "Screen Readers",
+          "desc": "Optimized ARIA labels and semantic HTML for NVDA and VoiceOver users.",
+          "icon": "Speech"
+        },
+        {
+          "title": "Keyboard Nav",
+          "desc": "Full site functionality using only Tab, Enter, and Arrow keys. No mouse required.",
+          "icon": "Keyboard"
+        },
+        {
+          "title": "Low Vision",
+          "desc": "High contrast modes and scalable typography up to 200% without breakage.",
+          "icon": "Eye"
+        },
+        {
+          "title": "Cognitive Ease",
+          "desc": "Reduced motion settings and distraction-free reading modes available.",
+          "icon": "Brain"
+        }
+      ],
+      "standards": [
+        {
+          "principle": "Perceivable",
+          "desc": "Information and user interface components must be presentable to users in ways they can perceive."
+        },
+        {
+          "principle": "Operable",
+          "desc": "User interface components and navigation must be operable."
+        },
+        {
+          "principle": "Understandable",
+          "desc": "Information and the operation of user interface must be understandable."
+        },
+        {
+          "principle": "Robust",
+          "desc": "Content must be robust enough that it can be interpreted reliably by a wide variety of user agents."
+        }
+      ]
+    },
+    "cookies_page": {
+      "hero": {
+        "badge": "Privacy Center",
+        "title": "Your Data. Your Control.",
+        "subtitle": "We believe in transparency. Here is exactly how and why we use cookies to improve your experience on the TMF platform.",
+        "last_updated": "October 24, 2024"
+      },
+      "preference_categories": [
+        {
+          "id": "essential",
+          "title": "Strictly Necessary",
+          "desc": "These are required for the website to function (e.g., logging into the grant portal, donating securely). They cannot be switched off.",
+          "icon": "ShieldCheck",
+          "required": true
+        },
+        {
+          "id": "analytics",
+          "title": "Performance & Analytics",
+          "desc": "We use these to count visits and traffic sources (via Google Analytics 4) so we can improve our site performance.",
+          "icon": "BarChart",
+          "required": false
+        },
+        {
+          "id": "marketing",
+          "title": "Marketing & Outreach",
+          "desc": "Used to track the effectiveness of our campaigns and show you relevant content on social media platforms.",
+          "icon": "Megaphone",
+          "required": false
+        },
+        {
+          "id": "functional",
+          "title": "Functionality",
+          "desc": "Enables enhanced features like video players, maps, and live chat widgets.",
+          "icon": "Settings",
+          "required": false
+        }
+      ],
+      "cookie_audit": [
+        {
+          "name": "_ga",
+          "provider": "Google",
+          "duration": "2 years",
+          "purpose": "Analytics: Distinguishes unique users."
+        },
+        {
+          "name": "csrftoken",
+          "provider": "TMF System",
+          "duration": "1 year",
+          "purpose": "Security: Prevents cross-site request forgery attacks."
+        },
+        {
+          "name": "session_id",
+          "provider": "TMF Portal",
+          "duration": "Session",
+          "purpose": "Essential: Keeps you logged in."
+        },
+        {
+          "name": "hotjar",
+          "provider": "Hotjar",
+          "duration": "365 days",
+          "purpose": "Analytics: Heatmaps and user feedback."
+        }
+      ]
+    },
+    "privacy_page": {
+      "hero": {
+        "badge": "Legal Framework",
+        "title": "Privacy Policy",
+        "subtitle": "How we collect, use, and protect your data. We adhere to the Tanzania Data Protection Act and GDPR standards.",
+        "last_updated": "October 24, 2024",
+        "version": "2.1"
+      },
+      "user_rights": [
+        {
+          "title": "Right to Access",
+          "desc": "Request a copy of all personal data we hold about you.",
+          "icon": "FileSearch"
+        },
+        {
+          "title": "Right to Erasure",
+          "desc": "Ask us to delete your data ('Right to be Forgotten').",
+          "icon": "Trash2"
+        },
+        {
+          "title": "Right to Rectify",
+          "desc": "Correct inaccurate or incomplete information.",
+          "icon": "Edit"
+        },
+        {
+          "title": "Data Portability",
+          "desc": "Receive your data in a structured, machine-readable format.",
+          "icon": "ArrowRightLeft"
+        }
+      ],
+      "sections": [
+        {
+          "id": "collection",
+          "title": "1. Data Collection",
+          "content": "We collect information you provide directly to us when you apply for a grant, sign up for our newsletter, or donate. This includes contact details, financial information for disbursement, and professional history."
+        },
+        {
+          "id": "usage",
+          "title": "2. How We Use Data",
+          "content": "Your data is used strictly for program administration, compliance vetting, and impact reporting. We do not sell your data to third-party advertisers."
+        },
+        {
+          "id": "sharing",
+          "title": "3. Third-Party Sharing",
+          "content": "We may share data with vetted partners (e.g., Auditors, Payment Processors) solely for operational purposes. All partners are bound by strict Non-Disclosure Agreements."
+        },
+        {
+          "id": "security",
+          "title": "4. Security Measures",
+          "content": "We implement SSL encryption, Two-Factor Authentication (2FA) for staff access, and regular penetration testing to safeguard our databases."
+        }
+      ]
+    },
+    "sitemap_page": {
+      "hero": {
+        "badge": "Site Index",
+        "title": "Full Architecture.",
+        "subtitle": "Explore the complete directory of the Tanzania Media Foundation digital ecosystem.",
+        "link_count": "32 Pages"
+      },
+      "clusters": [
+        {
+          "title": "Core",
+          "color": "blue",
+          "links": [
+            { "label": "Home", "url": "/" },
+            { "label": "About Us", "url": "/about" },
+            { "label": "Leadership", "url": "/about/leadership" },
+            { "label": "Global Network", "url": "/about/network" },
+            { "label": "Financials", "url": "/about/financials" },
+            { "label": "Awards", "url": "/about/awards" }
+          ]
+        },
+        {
+          "title": "Programs",
+          "color": "indigo",
+          "links": [
+            { "label": "Grants Portal", "url": "/grants" },
+            {
+              "label": "Investigative Journalism",
+              "url": "/grants/investigative"
+            },
+            { "label": "Community Media", "url": "/grants/community-media" },
+            {
+              "label": "Digital Innovation",
+              "url": "/grants/digital-innovation"
+            },
+            { "label": "Women in Media", "url": "/grants/women-in-media" },
+            { "label": "Emergency Fund", "url": "/work/emergency-fund" },
+            { "label": "Fellowships", "url": "/fellowships" }
+          ]
+        },
+        {
+          "title": "Knowledge Hub",
+          "color": "amber",
+          "links": [
+            { "label": "Resource Library", "url": "/resources" },
+            { "label": "Research Archive", "url": "/resources/research" },
+            { "label": "Policy Briefs", "url": "/resources/policy-briefs" },
+            { "label": "Toolkits", "url": "/resources/toolkits" },
+            { "label": "Annual Reviews", "url": "/resources/annual-reviews" },
+            { "label": "Training", "url": "/what-we-do/training" },
+            { "label": "Mentorship", "url": "/what-we-do/mentorship" },
+            {
+              "label": "Digital Security",
+              "url": "/what-we-do/digital-security"
+            },
+            { "label": "Media Literacy", "url": "/what-we-do/media-literacy" }
+          ]
+        },
+        {
+          "title": "Impact & Proof",
+          "color": "purple",
+          "links": [
+            { "label": "Live Dashboard", "url": "/impact/dashboard" },
+            { "label": "Success Metrics", "url": "/impact/metrics" },
+            { "label": "Grantee Showcase", "url": "/impact/grantees" },
+            { "label": "Case Studies", "url": "/impact/case-studies" },
+            { "label": "Impact Stories (Video)", "url": "/impact/stories" },
+            { "label": "Media Coverage", "url": "/impact/coverage" },
+            { "label": "Photo Gallery", "url": "/impact/gallery" },
+            { "label": "Trust Index", "url": "/impact/trust-index" }
+          ]
+        },
+        {
+          "title": "Engagement",
+          "color": "emerald",
+          "links": [
+            { "label": "Get Involved", "url": "/get-involved" },
+            { "label": "Donate", "url": "/get-involved/donate" },
+            { "label": "Corporate Partners", "url": "/get-involved/corporate" },
+            { "label": "Legacy Giving", "url": "/get-involved/legacy" },
+            { "label": "Fundraise", "url": "/get-involved/fundraise" },
+            { "label": "Volunteer", "url": "/get-involved/volunteer" },
+            { "label": "Events", "url": "/get-involved/events" },
+            { "label": "Careers", "url": "/careers" }
+          ]
+        },
+        {
+          "title": "Legal",
+          "color": "slate",
+          "links": [
+            { "label": "Privacy Policy", "url": "/privacy" },
+            { "label": "Cookie Policy", "url": "/cookies" },
+            { "label": "Terms of Use", "url": "/terms" },
+            { "label": "Sitemap", "url": "/sitemap" }
+          ]
+        }
+      ]
+    },
+    "terms_page": {
+      "hero": {
+        "badge": "Legal Agreement",
+        "title": "Terms of Service.",
+        "subtitle": "By accessing the Tanzania Media Foundation portal, grant system, or resource library, you agree to the following terms.",
+        "effective_date": "November 1, 2024"
+      },
+      "sections": [
+        {
+          "id": "acceptance",
+          "title": "1. Acceptance of Terms",
+          "content": "By accessing or using our Services, you confirm your agreement to be bound by these Terms. If you do not agree to these Terms, you may not access or use the Services."
+        },
+        {
+          "id": "eligibility",
+          "title": "2. Grant Eligibility",
+          "content": "Use of our Grant Portal requires verified accreditation as a journalist or media entity in Tanzania. Providing false information regarding your professional status constitutes fraud and will result in immediate ban and potential legal action."
+        },
+        {
+          "id": "ip",
+          "title": "3. Intellectual Property",
+          "content": "All research reports, toolkits, and software provided by TMF are licensed under Creative Commons (CC BY-NC 4.0), unless stated otherwise. You may use them for non-commercial reporting but must credit TMF."
+        },
+        {
+          "id": "conduct",
+          "title": "4. User Conduct",
+          "content": "You agree not to misuse our reporting tools, scrape our data for commercial datasets, or harass staff members via our support channels."
+        },
+        {
+          "id": "liability",
+          "title": "5. Limitation of Liability",
+          "content": "TMF provides safety advice and resources but cannot guarantee physical safety in the field. Use our 'Safety Toolkit' recommendations at your own professional discretion.",
+          "is_warning": true
+        },
+        {
+          "id": "termination",
+          "title": "6. Termination",
+          "content": "We reserve the right to suspend accounts found violating ethical journalism standards as defined by the Media Council of Tanzania."
+        }
+      ]
+    },
+    "newsroom_page": {
+      "hero": {
+        "badge": "Cover Story",
+        "title": "The End of Silence: How Community Radio is Changing Local Governance.",
+        "excerpt": "In the remote district of Tandahimba, a small transmitter is having a massive impact on water rights and civic participation. We spent a week inside the station.",
+        "author": "Sarah Juma",
+        "date": "Nov 14, 2024",
+        "read_time": "8 min read",
+        "image": "https://images.unsplash.com/photo-1590111161276-88686e92976d?q=80&w=2070&auto=format&fit=crop"
+      },
+      "breaking_news": [
+        "New Grant Cycle Opens Dec 1st",
+        "TMF Wins Global Transparency Award",
+        "Annual Media Report Download Now Available"
+      ],
+      "categories": ["All", "Field Notes", "Op-Ed", "Press Release", "Impact"],
+      "articles": [
+        {
+          "id": "1",
+          "title": "Digital Rights in the Age of AI",
+          "excerpt": "Why every newsroom needs an AI policy before 2025.",
+          "category": "Op-Ed",
+          "author": "Ernest Sungura",
+          "date": "Nov 10",
+          "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
+          "featured": true
+        },
+        {
+          "id": "2",
+          "title": "Workshop Recap: Arusha Data Viz",
+          "excerpt": "Highlights from our 3-day training with 40 editors.",
+          "category": "Field Notes",
+          "author": "Training Desk",
+          "date": "Nov 08",
+          "image": "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=2070&auto=format&fit=crop",
+          "featured": false
+        },
+        {
+          "id": "3",
+          "title": "TMF Partners with Google News Initiative",
+          "excerpt": "A strategic alliance to bring AI tools to 50 newsrooms.",
+          "category": "Press Release",
+          "author": "TMF Comms",
+          "date": "Nov 01",
+          "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2074&auto=format&fit=crop",
+          "featured": false
+        },
+        {
+          "id": "4",
+          "title": "Investigative Fund: Q3 Winners Announced",
+          "excerpt": "See the list of 12 journalists selected for the new cohort.",
+          "category": "Press Release",
+          "author": "Grants Team",
+          "date": "Oct 28",
+          "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
+          "featured": false
         }
       ]
     }
